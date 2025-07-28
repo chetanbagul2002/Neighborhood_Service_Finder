@@ -1,13 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/ui/Navbar";
-import Footer from "../components/ui/Footer"; // Import the Footer component
-import { ShieldCheck, Users, Search, Star, MessageSquare } from "lucide-react"; // Icons for benefits section
+import Footer from "../components/ui/Footer"; 
+import { ShieldCheck, Users, Search, Star, MessageSquare } from "lucide-react"; 
 
-// Import all necessary images - VERIFY THESE PATHS AND FILE NAMES!
-// Ensure these .jpeg files exist in your src/assets/ folder.
-// Removing heroBgImg import as we'll use a direct URL for reliability
-// import heroBgImg from "../assets/hero-background.jpeg";
+
 import plumberImg from "../assets/plumber.png";
 import electricianImg from "../assets/electrician.png";
 import cleaningImg from "../assets/cleaning.jpeg";
@@ -254,11 +251,11 @@ flex flex-col items-center"
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold text-gray-800 mb-12">Popular Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {services.slice(0, 8).map((service, index) => ( // Show top 8 services
-                <Link // Wrap the motion.div with Link to make the whole card clickable
+              {services.slice(0, 8).map((service, index) => ( 
+                <Link 
                   key={index}
-                  to={`/service/${service.name.toLowerCase().replace(/\s/g, '-')}`} // Navigate to service page
-                  className="block" // Make Link take full width
+                  to={`/service/${service.name.toLowerCase().replace(/\s/g, '-')}`} 
+                  className="block" 
                 >
                   <motion.div
                     whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
@@ -267,7 +264,7 @@ flex flex-col items-center"
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true, amount: 0.2 }}
                     className="bg-white rounded-2xl shadow-md overflow-hidden transform hover:translate-y-
--2 transition-all duration-300 h-full cursor-pointer" // Added h-full and cursor-pointer
+-2 transition-all duration-300 h-full cursor-pointer" 
                   >
                     <img
                       src={service.image}
@@ -279,7 +276,7 @@ flex flex-col items-center"
                         {service.name}
                       </h3>
                       <p className="text-gray-600 text-sm">{service.desc}</p>
-                      {/* Removed individual "View Providers" link, as the whole card is now clickable */}
+                      
                     </div>
                   </motion.div>
                 </Link>
